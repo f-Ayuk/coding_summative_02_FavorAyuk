@@ -105,6 +105,6 @@ case $choice in
   3) delete_student ;;
   4) update_student ;;
   5) exit_application ;;
-  *) echo "Invalid option. Please try again." ;;
+  *) echo "Invalid option. Please try again.";;
 esac
 done
