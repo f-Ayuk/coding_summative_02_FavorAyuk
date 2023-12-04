@@ -99,12 +99,12 @@ echo "5. Exit the application"
 read choice
 
 # Execute the corresponding function based on the user's choice
-case $choice in
-  1) create_student ;;
-  2) view_students ;;
-  3) delete_student ;;
-  4) update_student ;;
-  5) exit_application ;;
-  *) echo "Invalid option. Please try again.";;
+	case $choice in
+		1) create_student ;;
+		2) view_students ;;
+		3) delete_student ;;
+  		4) update_student ;;
+  		5) exit_application ;;
+  		*) echo "Invalid option. Please try again.";;
 esac
 done
