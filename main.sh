@@ -107,3 +107,4 @@ case $choice in
   5) exit_application ;;
   *) echo "Invalid option. Please try again." ;;
 esac
+done
