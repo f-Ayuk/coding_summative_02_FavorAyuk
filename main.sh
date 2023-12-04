@@ -8,7 +8,7 @@ create_student() {
   read email
   echo "Enter the student age:"
   read age
-  echo "Enter the student ID:"
+  echo "Enter the student ID(8-digit long):"
   read id
   # Append the student record to the file
   echo "$email,$age,$id" >> "$StudentsFile"
