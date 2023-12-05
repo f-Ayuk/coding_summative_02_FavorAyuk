@@ -35,7 +35,7 @@ delete_student() {
   read id
 
   # Check if the ID is a valid 8-digit number
-  if [[ $id =~ ^[0-9]{6}$ ]]; then
+  if [[ $id =~ ^[0-9]{8}$ ]]; then
     # Check if the ID exists in the file
     if grep -q "$id" "$StudentsFile"; then
       # Delete the matching line from the file
@@ -56,7 +56,7 @@ update_student() {
   read id
 
   # Check if the ID is a valid 8-digit number
-  if [[ $id =~ ^[0-9]{6}$ ]]; then
+  if [[ $id =~ ^[0-9]{8}$ ]]; then
     # Check if the ID exists in the file
     if grep -q "$id" "$StudentsFile"; then
       # Prompt the user to enter the new student email, age, and ID
@@ -69,7 +69,7 @@ update_student() {
       # Check if the new ID is a unique 8-digit number
           if [[ $new_id =~ ^[0-9]{8}$ ]] && ! grep -q "$new_id" students-list_0923.txt; then
             # Update the matching line in the file
-            sed -i "s/.*$id/$email,$age,$new_id/" students-list_0923.txt
+            sed -i "/$id/c$email,$age,$new_id/" "$StudentsFile"
             echo "Student record updated successfully."
           else
             echo "Invalid or duplicate student ID. Please try again."
